@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from base.models import Product, Review
+from base.models import Category, Product, Review
 from base.serializers import ProductSerializer
 
 from rest_framework import status
@@ -64,7 +64,7 @@ def createProduct(request):
         price=0,
         brand='Sample Brand',
         countInStock=0,
-        category='Sample Category',
+        category=category,
         description=''
     )
 
